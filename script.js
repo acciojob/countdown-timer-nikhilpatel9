@@ -1,13 +1,12 @@
 // Your script here.
 const inpt=document.getElementById("userInput");
 const start=document.getElementById("start");
-const curr=document.getElementById("current");
+
 const count=document.getElementById("countDown");
 const end=document.getElementById("endTime");
 start.addEventListener("click",()=>{
 	const date=new Date();
-	const now=new Date();
-	curr.textContent=now.toLocaleTimeString();
+	
 	const time=parseInt(inpt.value);
 	let sec = 60 * time;
 	const timer = setInterval(() => {
@@ -19,7 +18,7 @@ start.addEventListener("click",()=>{
     clearInterval(timer);
   }
 
-  count.textContent = `${hour} Hours:${minutes} Minutes:${seconds} Seconds`;
+  count.textContent = `${String(hour).padStart(2,"0")}:${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
   sec--;
 }, 1000);
 
