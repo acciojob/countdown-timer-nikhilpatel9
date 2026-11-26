@@ -29,3 +29,13 @@ start.addEventListener("click",()=>{
 	end.textContent=updated.toLocaleTimeString();
 	
 })
+const defaults = [1, 5, 10];
+defaults.forEach(t => {
+	const btn = document.createElement("button");
+	btn.textContent = `${t} min`;
+	btn.addEventListener("click", () => {
+		inpt.value = t;
+		start.click();
+	});
+	document.body.appendChild(btn);
+});
